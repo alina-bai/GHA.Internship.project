@@ -1,16 +1,16 @@
-// pages/auth/sign-in.jsx
-
+// pages/auth/sign-up.jsx
 "use client";
+
 import { useEffect } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import { SignIn } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 
-export default function SignInPage() {
+export default function SignUpPage() {
   const { isSignedIn } = useAuth();
   const router = useRouter();
 
-  console.log("SignInPage загружен");
+  console.log("SignUpPage загружен");
 
   useEffect(() => {
     console.log("isSignedIn:", isSignedIn);
@@ -21,8 +21,8 @@ export default function SignInPage() {
 
   return (
     <div>
-      <h1>Sign-in page</h1>
-      <SignIn routing="hash" /> {/* <-- Добавлен routing="hash" */}
+      <h1>Страница регистрации</h1>
+      <SignUp />
     </div>
   );
 }
